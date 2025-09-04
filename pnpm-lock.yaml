@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@slidev/cli':
-        specifier: ^51.1.2
-        version: 51.1.2(@babel/parser@7.26.9)(@nuxt/kit@3.15.4)(@types/markdown-it@14.1.2)(@types/node@18.19.76)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.0.0)(postcss@8.5.2)
       '@slidev/theme-default':
         specifier: latest
         version: 0.25.0
@@ -20,6 +17,10 @@ importers:
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.3)
+    devDependencies:
+      '@slidev/cli':
+        specifier: ^51.1.2
+        version: 51.1.2(@babel/parser@7.26.9)(@nuxt/kit@3.15.4)(@types/markdown-it@14.1.2)(@types/node@18.19.76)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.0.0)(postcss@8.5.2)
 
 packages:
 

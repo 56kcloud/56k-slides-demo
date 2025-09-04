@@ -1,6 +1,5 @@
 ---
 title: "56k Slides Demo"
-theme: ../../theme
 layout: cover
 class: text-center
 fonts:
@@ -32,9 +31,7 @@ layout: default
 Utilise le layout `hero-56k` pour un slide "hero" avec un header, un footer et un badge logo.
 
 ---
-layout: reference
-logo: /references/logo-56kcloud.svg
-image: /references/iot.jpg
+layout: default
 ---
 
 ## Références
@@ -51,7 +48,7 @@ class: text-center
 Voyons les principales fonctionnalités ✨
 
 ---
-layout: two-cols
+layout: default
 ---
 
 # Écriture en Markdown
@@ -92,7 +89,7 @@ Nous pouvons choisir un layout **par slide** via le frontmatter.
 
 ```md
 ---
-layout: two-cols
+layout: default
 ---
 
 ::left::
@@ -103,9 +100,7 @@ Contenu colonne droite
 ```
 
 ---
-layout: image
-image: /references/gilgen-door-systems/webapp-map-desktop.png
-backgroundSize: contain
+layout: default
 ---
 
 # Slide d’image
@@ -262,8 +257,6 @@ Référence centrée (layout `reference`) :
 ```md
 ---
 layout: reference
-logo: /references/logo-56kcloud.svg
-image: /references/iot.jpg
 ---
 ## Références
 - Lien 1
