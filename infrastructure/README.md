@@ -2,7 +2,7 @@
 
 ## Prérequis
 - [Pulumi](https://www.pulumi.com/docs/get-started/install/)
-- Node.js >= 22
+- Node.js == 22
 - AWS CLI configuré ou OIDC GitHub Actions
 
 ## Installation

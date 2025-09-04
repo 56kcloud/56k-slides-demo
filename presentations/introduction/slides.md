@@ -1,6 +1,6 @@
 ---
 title: "56k Slides Demo"
-theme: ./theme
+theme: ../../theme
 layout: cover
 class: text-center
 fonts:
