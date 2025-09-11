@@ -2,7 +2,7 @@ import * as aws from "@pulumi/aws";
 import * as pulumi from "@pulumi/pulumi";
 
 const config = new pulumi.Config();
-const bucketName = config.get("bucketName") || "56k-slides-demo-prod";
+const bucketName = config.require("bucketName");
 
 // S3 bucket privé
 const siteBucket = new aws.s3.Bucket(bucketName, {

@@ -2,7 +2,7 @@
 
 ## Prérequis
 - [Pulumi](https://www.pulumi.com/docs/get-started/install/)
-- Node.js >= 16
+- Node.js >= 22
 - AWS CLI configuré ou OIDC GitHub Actions
 
 ## Installation
@@ -13,9 +13,9 @@ npm install
 
 ## Déploiement
 ```bash
-pulumi stack init dev    # une fois
-pulumi config set aws:region eu-central-1
-pulumi config set bucketName 56k-slides-demo-prod
+pulumi stack init <stage>    # une fois
+pulumi config set aws:region <region>
+pulumi config set bucketName 56k-slides-demo-<stage>
 pulumi up
 ```
 
