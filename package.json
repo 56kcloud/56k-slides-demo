@@ -7,7 +7,7 @@
     "export": "slidev export",
     "preview": "npx serve dist -l 4173",
     "dev:pres": "slidev",
-    "build": "node ./build-all.mjs"
+    "build": "node ./scripts/build-presentations.mjs"
   },
   "dependencies": {
     "@slidev/cli": "^51.1.2",
