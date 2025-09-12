@@ -3,16 +3,18 @@
   "type": "module",
   "private": false,
   "scripts": {
-    "dev": "slidev --open",
+    "dev": "node ./scripts/presentation_by_theme.mjs",
     "export": "slidev export",
     "preview": "npx serve dist -l 4173",
     "dev:pres": "slidev",
     "build": "node ./scripts/build-presentations.mjs"
   },
   "dependencies": {
-    "@slidev/cli": "^51.1.2",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^51.1.2"
   }
 }
