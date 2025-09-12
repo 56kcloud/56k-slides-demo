@@ -3,7 +3,7 @@
   "type": "module",
   "private": false,
   "scripts": {
-    "dev": "slidev --open",
+    "dev": "node ./scripts/presentation_by_theme.mjs",
     "export": "slidev export",
     "preview": "npx serve dist -l 4173",
     "dev:pres": "slidev",

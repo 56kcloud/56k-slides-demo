@@ -10,33 +10,33 @@ mdc: true
 ---
 
 # 56k Slides Demo
-A Slidev démo with layout & custom theme
+A Slidev demo with layout & custom theme
 
 ---
 layout: hero-56k
 class: text-left
 ---
 
-# Pourquoi Slidev ?
-- Écrit en **Markdown**
-- Moteur **Vite + Vue 3**
-- Extensible (layouts, composants, thèmes)
+# Why Slidev?
+- Written in **Markdown**
+- Engine **Vite + Vue 3**
+- Extensible (layouts, components, themes)
 - Export **static** 🔥
 
 ---
 layout: default
 ---
 
-## Layout custom — `hero-56k`
-Utilise le layout `hero-56k` pour un slide "hero" avec un header, un footer et un badge logo.
+## Custom Layout — `hero-56k`
+Use the `hero-56k` layout for a "hero" slide with a header, footer, and logo badge.
 
 ---
 layout: default
 ---
 
-## Références
-- [Écrire un layout](https://sli.dev/guide/write-layout)
-- [Créer un thème](https://sli.dev/guide/write-theme)
+## References
+- [Write a layout](https://sli.dev/guide/write-layout)
+- [Create a theme](https://sli.dev/guide/write-theme)
 - [Deploy AWS S3 + CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html)
 
 ---
@@ -44,29 +44,29 @@ layout: cover
 class: text-center
 ---
 
-# Comprendre Slidev
-Voyons les principales fonctionnalités ✨
+# Understanding Slidev
+Let's see the main features ✨
 
 ---
 layout: default
 ---
 
-# Écriture en Markdown
-Slidev repose sur **Markdown** :
-- Titres avec `#`
-- Listes avec `-` ou `*`
-- Mise en forme **gras**, *italique*, `code`
-- Blocs de code avec \`\`\`lang (ex: \`\`\`js)
+# Writing in Markdown
+Slidev is based on **Markdown**:
+- Titles with `#`
+- Lists with `-` or `*`
+- Formatting **bold**, *italic*, `code`
+- Code blocks with \`\`\`lang (ex: \`\`\`js)
 
 ::right::
 ```md
-# Un titre H1
-## Un titre H2
+# A H1 title
+## A H2 title
 
-- Un élément de liste
-- Un autre élément
+- A list item
+- Another item
 
-**Gras**, *italique*, `inline code`
+**Bold**, *italic*, `inline code`
 ```
 
 ```js
@@ -77,15 +77,15 @@ console.log("hello world")
 layout: default
 ---
 
-## Layouts intégrés & custom
-Nous pouvons choisir un layout **par slide** via le frontmatter.
+## Built-in & Custom Layouts
+We can choose a layout **per slide** via the frontmatter.
 
-- `cover` → page d’intro  
-- `default` → texte classique  
-- `two-cols` → 2 colonnes avec slots  
-- `image` → image plein écran  
-- `reference` → ton layout custom de réf  
-- **`hero-56k`** → exemple de layout custom  
+- `cover` → intro page  
+- `default` → classic text  
+- `two-cols` → 2 columns with slots  
+- `image` → full screen image  
+- `reference` → your custom reference layout  
+- **`hero-56k`** → example of custom layout  
 
 ```md
 ---
@@ -93,23 +93,23 @@ layout: default
 ---
 
 ::left::
-Contenu colonne gauche
+Left column content
 
 ::right::
-Contenu colonne droite
+Right column content
 ```
 
 ---
 layout: default
 ---
 
-# Slide d’image
-Astuce : mettre des **chemins absolus** `/...` (exemple si on se situe dans public dans `public/`).
+# Image Slide
+Tip: use **absolute paths** `/...` (for example if located in `public/`).
 
 ```md
 ---
 layout: image
-image: /path/vers/image.png
+image: /path/to/image.png
 backgroundSize: contain
 ---
 ```
@@ -118,15 +118,15 @@ backgroundSize: contain
 layout: default
 ---
 
-## Composants Vue (Vue 3 inside)
-Nous pouvons inclure des **composants Vue** directement dans tes slides.
+## Vue Components (Vue 3 inside)
+We can include **Vue components** directly in your slides.
 
-Exemple d’utilisation :
+Example usage:
 ```vue
 <Counter :start="5" />
 ```
 
-Composant `components/Counter.vue` :
+Component `components/Counter.vue`:
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
@@ -148,50 +148,50 @@ button { padding: .5rem .75rem; border-radius: .5rem; }
 layout: default
 ---
 
-## Transitions de slides
-Transition **globale** (dans le frontmatter du projet) :
+## Slide Transitions
+**Global transition** (in the project's frontmatter):
 ```yaml
 transition: slide-left
 ```
 
-Transition **par slide** :
+**Per slide transition**:
 ```md
 ---
 transition: fade
 ---
-Contenu du slide
+Slide content
 ```
 
 ---
 layout: default
 ---
 
-## Notes orateur & mode présentateur
-Ajoute des **notes** invisibles pour le public :
+## Speaker Notes & Presenter Mode
+Add **notes** invisible to the audience:
 
 ```md
 ---
 layout: default
 ---
 
-# Ma slide
-Un point important
+# My slide
+An important point
 
 <!--
 notes:
-- Mentionner la démo live
-- Temps max: 2 min
+- Mention the live demo
+- Max time: 2 min
 -->
 ```
 
-Lance le **mode présentateur** (icône 👤) → horloge, prochaines slides, notes visibles.
+Launch **presenter mode** (👤 icon) → timer, next slides, notes visible.
 
 ---
 layout: default
 ---
 
-## Auto-animate (transitions fluides)
-Slidev anime automatiquement les différences entre 2 slides similaires :
+## Auto-animate (smooth transitions)
+Slidev automatically animates the differences between 2 similar slides:
 
 ```md
 ---
@@ -211,19 +211,19 @@ layout: default
 - Users: 250
 ```
 
-Quand nous passons de la première slide à la seconde, Slidev va animer la valeur au lieu de recharger la slide entière.
+When going from the first slide to the second, Slidev will animate the value instead of reloading the entire slide.
 
 ---
 layout: default
 ---
 
-## Thème & layout : où éditer ?
-- **Couleurs / styles globaux** → `theme/styles/layout.css`  
-- **Imports CSS thème** → `theme/styles/index.ts`  
-- **Layouts custom** → `theme/layouts/*.vue`  
+## Theme & Layout: where to edit?
+- **Colors / global styles** → `theme/styles/layout.css`  
+- **Theme CSS imports** → `theme/styles/index.ts`  
+- **Custom layouts** → `theme/layouts/*.vue`  
 - **Helpers** → `theme/layoutHelper.ts`  
 
-Exemple variables pour les couleurs **56k.cloud** :
+Example variables for **56k.cloud** colors:
 ```css
 :root {
   --slidev-theme-primary: #fff;
@@ -237,8 +237,8 @@ Exemple variables pour les couleurs **56k.cloud** :
 layout: default
 ---
 
-## Snippets utiles
-Image + texte avec `two-cols` :
+## Useful Snippets
+Image + text with `two-cols`:
 ```md
 ---
 layout: two-cols
@@ -248,32 +248,32 @@ layout: two-cols
 <img src="/office-map.svg" style="max-width: 520px;" />
 
 ::right::
-### Sites
+### Locations
 - Sion
 - Winterthur
 ```
 
-Référence centrée (layout `reference`) :
+Centered reference (layout `reference`):
 ```md
 ---
 layout: reference
 ---
-## Références
-- Lien 1
+## References
+- Link 1
 ```
 
 ---
 layout: default
 ---
 
-## Exporter / Builder
-- **HTML statique** :  
+## Export / Build
+- **Static HTML**:
 ```bash
 npm run build
-# sortie: ./dist
+# output: ./dist
 ```
 
-- **PDF** :  
+- **PDF**:
 ```bash
 npm run export
 ```
@@ -282,8 +282,8 @@ npm run export
 layout: default
 ---
 
-## Raccourcis clavier
-- `←` / `→` → naviguer  
-- `f` → plein écran  
+## Keyboard Shortcuts
+- `←` / `→` → navigate  
+- `f` → fullscreen  
 - `o` → overview  
 - `g` → go to  
