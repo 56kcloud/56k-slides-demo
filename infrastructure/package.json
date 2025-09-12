@@ -1,0 +1,14 @@
+{
+  "name": "56k-slides-infra",
+  "engines": {
+    "node": "22.19.0"
+  },
+  "devDependencies": {
+    "@types/node": ">=22.19.0",
+    "typescript": ">=5.9.2"
+  },
+  "dependencies": {
+    "@pulumi/aws": ">=7.7.0",
+    "@pulumi/pulumi": ">=3.193.0"
+  }
+}

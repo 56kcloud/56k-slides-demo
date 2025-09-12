@@ -1,0 +1,3 @@
+config:
+  aws:region: eu-central-1
+  56k-slides-infra:bucketName: 56k-slides-demo-dev
