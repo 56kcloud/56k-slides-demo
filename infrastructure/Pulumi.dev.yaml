@@ -1,3 +1,4 @@
 config:
   aws:region: eu-central-1
   56k-slides-infra:bucketName: 56k-slides-demo-dev
+encryptionsalt: v1:AiiVjDJD78Y=:v1:JwtaeJVpQjQKYLcZ:kTKn3OdKvI7RmN0aVg4o8TMv5XxOFA==
