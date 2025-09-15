@@ -3,7 +3,7 @@
   "type": "module",
   "private": false,
   "scripts": {
-    "dev": "slidev --open",
+    "dev": "node ./scripts/dev.mjs",
     "export": "slidev export",
     "preview": "npx serve dist -l 4173",
     "dev:pres": "slidev",
@@ -14,5 +14,10 @@
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^11.0.1",
+    "cross-env": "^10.0.0",
+    "vue-i18n": "^11.1.12"
   }
 }
