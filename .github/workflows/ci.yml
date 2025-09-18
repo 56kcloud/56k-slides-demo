@@ -28,10 +28,7 @@ jobs:
           pnpm -v
           pnpm -w list
 
-      - name: Lint (Biome)
-        run: pnpm -w run lint
-
-      - name: Check (Biome: lint + format check)
+      - name: Check (Biome lint + format check)
         run: pnpm -w run check
 
       - name: Build (Turbo)
