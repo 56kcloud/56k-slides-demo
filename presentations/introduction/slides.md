@@ -10,56 +10,53 @@ transition: slide-left
 mdc: true
 ---
 
-# 56k Slides Demo
-A Slidev démo with layout & custom theme
+# {{ $t('cover.title') }}
+{{ $t('cover.subtitle') }}
 
 ---
 layout: hero-56k
 class: text-left
 ---
 
-# Pourquoi Slidev ?
-- Écrit en **Markdown**
-- Moteur **Vite + Vue 3**
-- Extensible (layouts, composants, thèmes)
-- Export **static** 🔥
+# {{ $t('why.title') }}
+<ul>
+  <li v-for="p in $tm('why.points')" :key="p">{{ p }}</li>
+</ul>
 
 ---
 layout: default
 ---
 
-## Layout custom — `hero-56k`
-Utilise le layout `hero-56k` pour un slide "hero" avec un header, un footer et un badge logo.
+## {{ $t('heroSection.title') }}
+{{ $t('heroSection.description') }}
 
 ---
 layout: reference
-logo: /references/logo-56kcloud.svg
-image: /references/iot.jpg
 ---
 
-## Références
-- [Écrire un layout](https://sli.dev/guide/write-layout)
-- [Créer un thème](https://sli.dev/guide/write-theme)
-- [Deploy AWS S3 + CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html)
+## {{ $t('references.title') }}
+<ul>
+  <li v-for="item in $tm('references.items')" :key="item.label">
+    <a :href="item.url" target="_blank" rel="noreferrer">{{ item.label }}</a>
+  </li>
+</ul>
 
 ---
 layout: cover
 class: text-center
 ---
 
-# Comprendre Slidev
-Voyons les principales fonctionnalités ✨
+# {{ $t('intro.title') }}
+{{ $t('intro.subtitle') }}
 
 ---
 layout: two-cols
 ---
 
-# Écriture en Markdown
-Slidev repose sur **Markdown** :
-- Titres avec `#`
-- Listes avec `-` ou `*`
-- Mise en forme **gras**, *italique*, `code`
-- Blocs de code avec \`\`\`lang (ex: \`\`\`js)
+# {{ $t('markdown.title') }}
+<ul>
+  <li v-for="p in $tm('markdown.points')" :key="p">{{ p }}</li>
+</ul>
 
 ::right::
 ```md
@@ -80,15 +77,10 @@ console.log("hello world")
 layout: default
 ---
 
-## Layouts intégrés & custom
-Nous pouvons choisir un layout **par slide** via le frontmatter.
-
-- `cover` → page d’intro  
-- `default` → texte classique  
-- `two-cols` → 2 colonnes avec slots  
-- `image` → image plein écran  
-- `reference` → ton layout custom de réf  
-- **`hero-56k`** → exemple de layout custom  
+## {{ $t('layoutsSection.title') }}
+<ul>
+  <li v-for="p in $tm('layoutsSection.builtin')" :key="p">{{ p }}</li>
+</ul>
 
 ```md
 ---
@@ -104,17 +96,15 @@ Contenu colonne droite
 
 ---
 layout: image
-image: /references/gilgen-door-systems/webapp-map-desktop.png
 backgroundSize: contain
 ---
 
-# Slide d’image
-Astuce : mettre des **chemins absolus** `/...` (exemple si on se situe dans public dans `public/`).
+# {{ $t('imageSlide.title') }}
+{{ $t('imageSlide.tip') }}
 
 ```md
 ---
 layout: image
-image: /path/vers/image.png
 backgroundSize: contain
 ---
 ```
@@ -123,15 +113,13 @@ backgroundSize: contain
 layout: default
 ---
 
-## Composants Vue (Vue 3 inside)
-Nous pouvons inclure des **composants Vue** directement dans tes slides.
+## {{ $t('vueComponents.title') }}
+{{ $t('vueComponents.description') }}
 
-Exemple d’utilisation :
 ```vue
 <Counter :start="5" />
 ```
 
-Composant `components/Counter.vue` :
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
@@ -153,13 +141,11 @@ button { padding: .5rem .75rem; border-radius: .5rem; }
 layout: default
 ---
 
-## Transitions de slides
-Transition **globale** (dans le frontmatter du projet) :
+## {{ $t('transitions.title') }}
 ```yaml
 transition: slide-left
 ```
 
-Transition **par slide** :
 ```md
 ---
 transition: fade
@@ -171,9 +157,7 @@ Contenu du slide
 layout: default
 ---
 
-## Notes orateur & mode présentateur
-Ajoute des **notes** invisibles pour le public :
-
+## {{ $t('notes.title') }}
 ```md
 ---
 layout: default
@@ -189,15 +173,11 @@ notes:
 -->
 ```
 
-Lance le **mode présentateur** (icône 👤) → horloge, prochaines slides, notes visibles.
-
 ---
 layout: default
 ---
 
-## Auto-animate (transitions fluides)
-Slidev anime automatiquement les différences entre 2 slides similaires :
-
+## {{ $t('autoAnimate.title') }}
 ```md
 ---
 layout: default
@@ -216,19 +196,17 @@ layout: default
 - Users: 250
 ```
 
-Quand nous passons de la première slide à la seconde, Slidev va animer la valeur au lieu de recharger la slide entière.
+{{ $t('autoAnimate.description') }}
 
 ---
 layout: default
 ---
 
-## Thème & layout : où éditer ?
-- **Couleurs / styles globaux** → `theme/styles/layout.css`  
-- **Imports CSS thème** → `theme/styles/index.ts`  
-- **Layouts custom** → `theme/layouts/*.vue`  
-- **Helpers** → `theme/layoutHelper.ts`  
+## {{ $t('themeEdit.title') }}
+<ul>
+  <li v-for="p in $tm('themeEdit.items')" :key="p">{{ p }}</li>
+</ul>
 
-Exemple variables pour les couleurs **56k.cloud** :
 ```css
 :root {
   --slidev-theme-primary: #fff;
@@ -242,8 +220,7 @@ Exemple variables pour les couleurs **56k.cloud** :
 layout: default
 ---
 
-## Snippets utiles
-Image + texte avec `two-cols` :
+## {{ $t('snippets.title') }}
 ```md
 ---
 layout: two-cols
@@ -258,7 +235,6 @@ layout: two-cols
 - Winterthur
 ```
 
-Référence centrée (layout `reference`) :
 ```md
 ---
 layout: reference
@@ -273,14 +249,12 @@ image: /references/iot.jpg
 layout: default
 ---
 
-## Exporter / Builder
-- **HTML statique** :  
+## {{ $t('export.title') }}
 ```bash
 npm run build
-# sortie: ./dist
+# ./dist
 ```
 
-- **PDF** :  
 ```bash
 npm run export
 ```
@@ -289,8 +263,7 @@ npm run export
 layout: default
 ---
 
-## Raccourcis clavier
-- `←` / `→` → naviguer  
-- `f` → plein écran  
-- `o` → overview  
-- `g` → go to  
+## {{ $t('shortcuts.title') }}
+<ul>
+  <li v-for="p in $tm('shortcuts.items')" :key="p">{{ p }}</li>
+</ul>
