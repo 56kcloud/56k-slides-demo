@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -13,22 +16,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '22.19.0'
           cache: 'pnpm'
 
-      - name: Install deps
-        run: pnpm install --frozen-lockfile
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: true
 
-      - name: Build all presentations
-        run: pnpm build
+      - name: Build all (Turbo)
+        run: pnpm -w run build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -36,9 +37,9 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Sync to S3
+      - name: Sync apps/slidev/dist to S3
         run: |
-          aws s3 sync dist/ "s3://${{ secrets.S3_BUCKET }}/" --delete --only-show-errors
+          aws s3 sync "apps/slidev/dist/" "s3://${{ secrets.S3_BUCKET }}/" --delete --only-show-errors
 
       - name: Invalidate CloudFront
         run: |
