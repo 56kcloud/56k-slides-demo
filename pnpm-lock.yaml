@@ -30,12 +30,18 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.9.2)
     devDependencies:
+      '@biomejs/biome':
+        specifier: ^2.2.3
+        version: 2.2.4
       '@intlify/unplugin-vue-i18n':
         specifier: ^11.0.1
         version: 11.0.1(@vue/compiler-dom@3.5.13)(eslint@9.35.0(jiti@2.4.2))(rollup@4.34.8)(typescript@5.9.2)(vue-i18n@11.1.12(vue@3.5.13(typescript@5.9.2)))(vue@3.5.13(typescript@5.9.2))
       cross-env:
         specifier: ^10.0.0
         version: 10.0.0
+      typescript:
+        specifier: ^5.9.1
+        version: 5.9.2
       vue-i18n:
         specifier: ^11.1.12
         version: 11.1.12(vue@3.5.13(typescript@5.9.2))
@@ -49,6 +55,9 @@ importers:
         specifier: '>=3.193.0'
         version: 3.197.0(typescript@5.9.2)
     devDependencies:
+      '@biomejs/biome':
+        specifier: ^2.2.3
+        version: 2.2.4
       '@types/node':
         specifier: '>=22.19.0'
         version: 24.5.2
