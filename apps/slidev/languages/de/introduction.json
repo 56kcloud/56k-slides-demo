@@ -1,0 +1,112 @@
+{
+  "cover": {
+    "title": "56k Slides Demo",
+    "subtitle": "Eine Slidev‑Demo mit Layout & Custom Theme"
+  },
+  "why": {
+    "title": "Warum Slidev?",
+    "points": [
+      "Geschrieben in **Markdown**",
+      "Engine **Vite + Vue 3**",
+      "Erweiterbar (Layouts, Komponenten, Themes)",
+      "Export **statisch** 🔥"
+    ]
+  },
+  "heroSection": {
+    "title": "Custom-Layout — `hero-56k`",
+    "description": "Verwende das `hero-56k`‑Layout für eine „Hero“-Folie mit Header, Footer und Logo‑Badge."
+  },
+  "references": {
+    "title": "Referenzen",
+    "items": [
+      {
+        "label": "Ein Layout schreiben",
+        "url": "https://sli.dev/guide/write-layout"
+      },
+      {
+        "label": "Ein Theme erstellen",
+        "url": "https://sli.dev/guide/write-theme"
+      },
+      {
+        "label": "Deployment auf AWS S3 + CloudFront",
+        "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Slidev verstehen",
+    "subtitle": "Schauen wir uns die wichtigsten Features an ✨"
+  },
+  "markdown": {
+    "title": "Schreiben in Markdown",
+    "points": [
+      "Überschriften mit `#`",
+      "Listen mit `-` oder `*`",
+      "Formatierung **fett**, *kursiv*, `Code`",
+      "Code‑Blöcke mit \\`\\`\\`lang (z. B. \\`\\`\\`js)"
+    ],
+    "example": {
+      "h1": "Eine H1‑Überschrift",
+      "h2": "Eine H2‑Überschrift",
+      "item1": "Ein Listeneintrag",
+      "item2": "Ein weiterer Eintrag",
+      "formatting": "**Fett**, *kursiv*, `Inline‑Code`"
+    }
+  },
+  "layoutsSection": {
+    "title": "Eingebaute & Custom‑Layouts",
+    "builtin": [
+      "`cover` → Intro‑Seite",
+      "`default` → klassischer Text",
+      "`two-cols` → 2 Spalten mit Slots",
+      "`image` → Vollbildbild",
+      "`reference` → dein benutzerdefiniertes Referenz‑Layout",
+      "**`hero-56k`** → Beispiel für ein Custom‑Layout"
+    ],
+    "leftContent": "Inhalt linke Spalte",
+    "rightContent": "Inhalt rechte Spalte"
+  },
+  "imageSlide": {
+    "title": "Bild‑Folie",
+    "tip": "Tipp: Verwende **absolute Pfade** `/...` (z. B. wenn sich die Dateien in `public/` befinden)."
+  },
+  "vueComponents": {
+    "title": "Vue‑Komponenten (Vue 3 inside)",
+    "description": "Wir können **Vue‑Komponenten** direkt in deinen Folien einbinden."
+  },
+  "transitions": {
+    "title": "Folienübergänge",
+    "exampleContent": "Inhalt der Folie"
+  },
+  "notes": {
+    "title": "Sprechernotizen & Präsentatormodus",
+    "example": {
+      "title": "Meine Folie",
+      "content": "Ein wichtiger Punkt",
+      "notes": ["Live‑Demo erwähnen", "Max. Zeit: 2 Min."]
+    }
+  },
+  "autoAnimate": {
+    "title": "Auto‑animate (flüssige Übergänge)",
+    "description": "Beim Wechsel von der ersten zur zweiten Folie wird der Wert animiert, statt die gesamte Folie neu zu laden."
+  },
+  "themeEdit": {
+    "title": "Theme & Layout: wo bearbeiten?",
+    "items": [
+      "**Farben / globale Styles** → `theme/styles/layout.css`",
+      "**Theme‑CSS‑Imports** → `theme/styles/index.ts`",
+      "**Custom‑Layouts** → `theme/layouts/*.vue`",
+      "**Helpers** → `theme/layoutHelper.ts`"
+    ]
+  },
+  "snippets": {
+    "title": "Nützliche Snippets"
+  },
+  "export": {
+    "title": "Export / Build"
+  },
+  "shortcuts": {
+    "title": "Tastenkürzel",
+    "items": ["`←` / `→` → navigieren", "`f` → Vollbild", "`o` → Übersicht", "`g` → Gehe zu"]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "cover": {
+    "title": "56k Slides Demo",
+    "subtitle": "Une démo Slidev avec layout & thème customisable"
+  },
+  "why": {
+    "title": "Pourquoi Slidev ?",
+    "points": [
+      "Écrit en **Markdown**",
+      "Moteur **Vite + Vue 3**",
+      "Extensible (layouts, composants, thèmes)",
+      "Export **static** 🔥"
+    ]
+  },
+  "heroSection": {
+    "title": "Layout custom — `hero-56k`",
+    "description": "Utilise le layout `hero-56k` pour un slide « hero » avec un header, un footer et un badge logo."
+  },
+  "references": {
+    "title": "Références",
+    "items": [
+      {
+        "label": "Écrire un layout",
+        "url": "https://sli.dev/guide/write-layout"
+      },
+      {
+        "label": "Créer un thème",
+        "url": "https://sli.dev/guide/write-theme"
+      },
+      {
+        "label": "Deploy AWS S3 + CloudFront",
+        "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Comprendre Slidev",
+    "subtitle": "Voyons les principales fonctionnalités ✨"
+  },
+  "markdown": {
+    "title": "Écriture en Markdown",
+    "points": [
+      "Titres avec `#`",
+      "Listes avec `-` ou `*`",
+      "Mise en forme **gras**, *italique*, `code`",
+      "Blocs de code avec \\`\\`\\`lang (ex: \\`\\`\\`js)"
+    ],
+    "example": {
+      "h1": "Un titre H1",
+      "h2": "Un titre H2",
+      "item1": "Un élément de liste",
+      "item2": "Un autre élément",
+      "formatting": "**Gras**, *italique*, `inline code`"
+    }
+  },
+  "layoutsSection": {
+    "title": "Layouts intégrés & custom",
+    "builtin": [
+      "`cover` → page d’intro",
+      "`default` → texte classique",
+      "`two-cols` → 2 colonnes avec slots",
+      "`image` → image plein écran",
+      "`reference` → ton layout custom de réf",
+      "**`hero-56k`** → exemple de layout custom"
+    ],
+    "leftContent": "Contenu colonne gauche",
+    "rightContent": "Contenu colonne droite"
+  },
+  "imageSlide": {
+    "title": "Slide d’image",
+    "tip": "Astuce : mettre des **chemins absolus** `/...` (exemple si on se situe dans public dans `public/`)."
+  },
+  "vueComponents": {
+    "title": "Composants Vue (Vue 3 inside)",
+    "description": "Nous pouvons inclure des **composants Vue** directement dans tes slides."
+  },
+  "transitions": {
+    "title": "Transitions de slides",
+    "exampleContent": "Contenu du slide"
+  },
+  "notes": {
+    "title": "Notes orateur & mode présentateur",
+    "example": {
+      "title": "Ma slide",
+      "content": "Un point important",
+      "notes": ["Mentionner la démo live", "Temps max: 2 min"]
+    }
+  },
+  "autoAnimate": {
+    "title": "Auto-animate (transitions fluides)",
+    "description": "Quand nous passons de la première slide à la seconde, Slidev va animer la valeur au lieu de recharger la slide entière."
+  },
+  "themeEdit": {
+    "title": "Thème & layout : où éditer ?",
+    "items": [
+      "**Couleurs / styles globaux** → `theme/styles/layout.css`",
+      "**Imports CSS thème** → `theme/styles/index.ts`",
+      "**Layouts custom** → `theme/layouts/*.vue`",
+      "**Helpers** → `theme/layoutHelper.ts`"
+    ]
+  },
+  "snippets": {
+    "title": "Snippets utiles"
+  },
+  "export": {
+    "title": "Exporter / Builder"
+  },
+  "shortcuts": {
+    "title": "Raccourcis clavier",
+    "items": ["`←` / `→` → naviguer", "`f` → plein écran", "`o` → overview", "`g` → go to"]
+  }
+}
