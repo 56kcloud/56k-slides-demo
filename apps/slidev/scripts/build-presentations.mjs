@@ -1,26 +1,28 @@
-import { readdirSync, statSync, existsSync, mkdirSync } from "fs";
-import { spawnSync } from "child_process";
-import path from "path";
+import { spawnSync } from "node:child_process";
+import { existsSync, mkdirSync, readdirSync, statSync } from "node:fs";
+import path from "node:path";
 
 const presRoot = path.resolve("presentations");
 const distRoot = path.resolve("dist");
 const languagesRoot = path.resolve("languages");
 
-const decks = readdirSync(presRoot).filter((d) => {
-  const full = path.join(presRoot, d);
+const decks = readdirSync(presRoot).filter((deckName) => {
+  const full = path.join(presRoot, deckName);
   return statSync(full).isDirectory() && existsSync(path.join(full, "slides.md"));
 });
 
 const locales = existsSync(languagesRoot)
-  ? readdirSync(languagesRoot).filter((d) => {
-      const full = path.join(languagesRoot, d);
+  ? readdirSync(languagesRoot).filter((localeName) => {
+      const full = path.join(languagesRoot, localeName);
       return statSync(full).isDirectory();
     })
   : [];
 
-if (!existsSync(distRoot)) mkdirSync(distRoot, { recursive: true });
+if (!existsSync(distRoot)) {
+  mkdirSync(distRoot, { recursive: true });
+}
 
-console.log(`\n Locales detected: ${locales.join(", ") || "none"}`);
+console.log(`\nLocales detected: ${locales.join(", ") || "none"}`);
 console.log(`Decks detected: ${decks.join(", ")}`);
 
 const hasDeckLocale = (locale, deck) =>
@@ -30,7 +32,7 @@ for (const pres of decks) {
   const entry = path.join(presRoot, pres, "slides.md");
 
   const outDir = path.resolve(distRoot, pres);
-  console.log(`\n Building ${pres} [default] → ${outDir}`);
+  console.log(`\nBuilding ${pres} [default] -> ${outDir}`);
   const resDefault = spawnSync(
     "npx",
     ["slidev", "build", entry, "--out", outDir, "--base", `/${pres}/`],
@@ -41,7 +43,7 @@ for (const pres of decks) {
         ...process.env,
         VITE_DECK: pres,
       },
-    }
+    },
   );
 
   if (resDefault.status !== 0) {
@@ -50,10 +52,12 @@ for (const pres of decks) {
   }
 
   for (const locale of locales) {
-    if (!hasDeckLocale(locale, pres)) continue;
+    if (!hasDeckLocale(locale, pres)) {
+      continue;
+    }
 
     const outDirLocale = path.resolve(distRoot, pres, locale);
-    console.log(` Building ${pres} [${locale}] → ${outDirLocale}`);
+    console.log(`Building ${pres} [${locale}] -> ${outDirLocale}`);
 
     const resLocale = spawnSync(
       "npx",
@@ -66,14 +70,14 @@ for (const pres of decks) {
           VITE_DECK: pres,
           VITE_LOCALE: locale,
         },
-      }
+      },
     );
 
     if (resLocale.status !== 0) {
-      console.error(` Build failed for ${pres} [${locale}]`);
+      console.error(`Build failed for ${pres} [${locale}]`);
       process.exit(resLocale.status);
     }
   }
 }
 
-console.log(`\n All decks built.`);
+console.log(`\nAll decks built.`);

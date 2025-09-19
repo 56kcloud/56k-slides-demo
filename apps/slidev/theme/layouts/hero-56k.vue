@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const props = defineProps<{logo?: boolean}>()
+// biome-ignore lint/correctness/noUnusedVariables: used in template
+const { logo } = withDefaults(defineProps<{ logo?: boolean }>(), {
+  logo: true,
+});
 </script>
 
 <template>
@@ -8,7 +11,7 @@ const props = defineProps<{logo?: boolean}>()
       <div class="rounded-full px-3 py-1 text-xs tracking-wide bg-[color:var(--slidev-theme-background-lightened)]/50 border border-white/10">
         56k.cloud
       </div>
-      <Logo v-if="props.logo !== false" class="h-6 opacity-90" />
+      <Logo v-if="logo" class="h-6 opacity-90" />
     </header>
     <main class="flex-1 flex flex-col justify-center">
       <slot />

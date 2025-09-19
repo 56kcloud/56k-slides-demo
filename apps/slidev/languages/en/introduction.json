@@ -83,10 +83,7 @@
     "example": {
       "title": "My slide",
       "content": "An important point",
-      "notes": [
-        "Mention the live demo",
-        "Max time: 2 min"
-      ]
+      "notes": ["Mention the live demo", "Max time: 2 min"]
     }
   },
   "autoAnimate": {
@@ -110,11 +107,6 @@
   },
   "shortcuts": {
     "title": "Keyboard Shortcuts",
-    "items": [
-      "`←` / `→` → navigate",
-      "`f` → fullscreen",
-      "`o` → overview",
-      "`g` → go to"
-    ]
+    "items": ["`←` / `→` → navigate", "`f` → fullscreen", "`o` → overview", "`g` → go to"]
   }
 }

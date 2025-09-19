@@ -1,35 +1,43 @@
-import { createI18n } from 'vue-i18n'
-import type { App } from 'vue'
+import type { App } from "vue";
+import { createI18n } from "vue-i18n";
 
-const deck   = (import.meta as any).env?.VITE_DECK || 'introduction'
-const locale = (import.meta as any).env?.VITE_LOCALE || 'en'
+type LocaleMessages = Record<string, string>;
+type MessageModule = LocaleMessages | { default: LocaleMessages };
 
-const messageFiles = (import.meta as any).glob('../../../languages/*/*.json', { eager: true })
+const deck = import.meta.env.VITE_DECK ?? "introduction";
+const locale = import.meta.env.VITE_LOCALE ?? "en";
 
-function loadMessages(loc: string, dk: string) {
-  const key = `../../../languages/${loc}/${dk}.json`
-  const mod = messageFiles[key]
+const messageFiles = import.meta.glob<MessageModule>("../../../languages/*/*.json", {
+  eager: true,
+});
+
+const isModuleWithDefault = (mod: MessageModule): mod is { default: LocaleMessages } =>
+  typeof mod === "object" && mod !== null && "default" in mod;
+
+function loadMessages(loc: string, dk: string): LocaleMessages {
+  const key = `../../../languages/${loc}/${dk}.json`;
+  const mod = messageFiles[key];
   if (!mod) {
-    console.warn('[i18n] Missing translation file:', key)
-    return {}
+    console.warn("[i18n] Missing translation file:", key);
+    return {} as LocaleMessages;
   }
-  return (mod as any).default ?? mod
+  return isModuleWithDefault(mod) ? mod.default : mod;
 }
 
 export default ({ app }: { app: App }) => {
-  const msgs = loadMessages(locale, deck)
+  const msgs = loadMessages(locale, deck);
 
   const i18n = createI18n({
     legacy: false,
     locale,
-    fallbackLocale: 'en',
+    fallbackLocale: "en",
     messages: { [locale]: msgs },
-  })
+  });
 
-  if ((i18n as any).mode === 'composition') {
-    (i18n.global.locale as any).value = locale
+  if (i18n.mode === "composition") {
+    i18n.global.locale.value = locale;
   }
 
-  console.log('[i18n] deck:', deck, '| locale:', locale, '| keys:', Object.keys(msgs))
-  app.use(i18n)
-}
+  console.log("[i18n] deck:", deck, "| locale:", locale, "| keys:", Object.keys(msgs));
+  app.use(i18n);
+};

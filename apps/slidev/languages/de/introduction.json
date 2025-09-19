@@ -83,10 +83,7 @@
     "example": {
       "title": "Meine Folie",
       "content": "Ein wichtiger Punkt",
-      "notes": [
-        "Live‑Demo erwähnen",
-        "Max. Zeit: 2 Min."
-      ]
+      "notes": ["Live‑Demo erwähnen", "Max. Zeit: 2 Min."]
     }
   },
   "autoAnimate": {
@@ -110,11 +107,6 @@
   },
   "shortcuts": {
     "title": "Tastenkürzel",
-    "items": [
-      "`←` / `→` → navigieren",
-      "`f` → Vollbild",
-      "`o` → Übersicht",
-      "`g` → Gehe zu"
-    ]
+    "items": ["`←` / `→` → navigieren", "`f` → Vollbild", "`o` → Übersicht", "`g` → Gehe zu"]
   }
 }

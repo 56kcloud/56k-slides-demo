@@ -14,9 +14,9 @@
   },
   "scripts": {
     "dev": "echo 'No dev mode for infra, use pulumi up instead'",
-    "build": "tsc --noEmit",           
-    "lint": "biome lint .",            
+    "build": "tsc --noEmit",
+    "lint": "biome lint .",
     "format": "biome format . --write",
-    "check": "biome check ."           
+    "check": "biome check ."
   }
 }

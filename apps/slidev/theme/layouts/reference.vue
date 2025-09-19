@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { handleBackground } from '../layoutHelper'
+import { computed } from "vue";
+import { handleBackground } from "../layoutHelper";
 
 const props = defineProps({
   logo: {
@@ -11,24 +11,25 @@ const props = defineProps({
   },
   backgroundSize: {
     type: String,
-    default: 'cover',
+    default: "cover",
   },
-})
+});
 
-const style = computed(() => handleBackground(props.image, false, props.backgroundSize))
+// biome-ignore lint/correctness/noUnusedVariables: used in template
+const backgroundStyle = computed(() => handleBackground(props.image, false, props.backgroundSize));
 </script>
 
 <template>
   <div class="grid grid-cols-[40%_60%] w-full h-full auto-rows-fr">
     <!-- Colonne image -->
-    <div class="w-full h-full" :style="style" />
+    <div class="w-full h-full" :style="backgroundStyle" />
 
     <!-- Colonne texte -->
     <div class="slidev-layout reference flex flex-col items-center justify-center text-center relative px-8">
       <!-- logo optionnel -->
       <img v-if="props.logo" :src="props.logo" class="w-36 h-auto absolute top-6 right-6" alt="logo" />
       
-      <!-- contenu centré -->
+      <!-- contenu centre -->
       <slot />
     </div>
   </div>
