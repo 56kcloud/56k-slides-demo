@@ -3,15 +3,18 @@
 html.dark {
   --slidev-theme-background: #f7f7f7;
   --slidev-theme-foreground: #222;
-  --slidev-theme-primary:   #ffcc00;
+  --slidev-theme-primary: #ffcc00;
 }
 
 .slidev-layout {
   color: var(--slidev-theme-foreground);
 }
 
-.slidev-layout :where(h1,h2,h3,h4,h5,h6,p,li,blockquote,code,strong,em) {
+.slidev-layout :where(h1, h2, h3, h4, h5, h6, p, li, blockquote, code, strong, em) {
   color: inherit;
 }
 
-.slidev-layout a { color: inherit; text-decoration: underline; }
+.slidev-layout a {
+  color: inherit;
+  text-decoration: underline;
+}

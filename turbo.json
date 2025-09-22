@@ -7,10 +7,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [
-        "dist/**",
-        "apps/**/dist/**"
-      ]
+      "outputs": ["dist/**", "apps/**/dist/**"]
     },
     "lint": {
       "cache": true
