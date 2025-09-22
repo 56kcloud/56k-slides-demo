@@ -2,7 +2,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 
-const presRoot = path.resolve("presentations");
+const presRoot = path.resolve("apps/slidev/presentations");
 const distRoot = path.resolve("dist");
 const languagesRoot = path.resolve("languages");
 

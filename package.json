@@ -11,7 +11,11 @@
     "export": "slidev export",
     "preview": "npx serve dist -l 4173",
     "dev:pres": "slidev",
-    "build": "node ./scripts/build-presentations.mjs"
+    "build": "node ./apps/slidev/scripts/build-presentations.mjs",
+
+    "lint": "biome lint .",
+    "format": "biome format . --write",
+    "check": "biome check ."
   },
   "dependencies": {
     "@slidev/theme-default": "latest",
