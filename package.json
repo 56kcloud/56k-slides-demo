@@ -7,7 +7,7 @@
   ],
   "packageManager": "pnpm@10.15.1",
   "scripts": {
-    "dev": "node ./scripts/presentation_by_theme.mjs",
+    "dev": "node ./apps/slidev/scripts/presentation_launch.mjs",
     "export": "slidev export",
     "preview": "npx serve dist -l 4173",
     "dev:pres": "slidev",

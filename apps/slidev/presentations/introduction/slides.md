@@ -1,6 +1,6 @@
 ---
 title: "56k Slides Demo"
-theme: ../../theme
+theme: ../../themes/56kcloud
 layout: cover
 class: text-center
 fonts:
@@ -50,7 +50,7 @@ class: text-center
 {{ $t('intro.subtitle') }}
 
 ---
-layout: two-cols
+layout: default
 ---
 
 # {{ $t('markdown.title') }}
@@ -58,7 +58,6 @@ layout: two-cols
   <li v-for="p in $tm('markdown.points')" :key="p">{{ p }}</li>
 </ul>
 
-::right::
 ```md
 # Un titre H1
 ## Un titre H2
@@ -95,7 +94,7 @@ Contenu colonne droite
 ```
 
 ---
-layout: image
+layout: default
 backgroundSize: contain
 ---
 
@@ -104,7 +103,7 @@ backgroundSize: contain
 
 ```md
 ---
-layout: image
+layout: default
 backgroundSize: contain
 ---
 ```
