@@ -29,11 +29,9 @@ function resolveAsset(p?: string) {
           alt="logo"
         />
       </header>
-
       <main class="flex-1 flex flex-col justify-center">
         <slot />
       </main>
-
       <footer class="flex items-center justify-between text-xs opacity-70">
         <div>Slidev + Vite + Vue 3</div>
         <div>Mode Teaching</div>
@@ -52,4 +50,3 @@ function resolveAsset(p?: string) {
     radial-gradient(50rem 30rem at -10% -10%, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
 }
 </style>
-

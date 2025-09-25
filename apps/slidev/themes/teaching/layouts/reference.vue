@@ -25,10 +25,8 @@ const style = computed(() => handleBackground(props.image, false, props.backgrou
   <TeachingDefault>
     <div class="grid grid-cols-[40%_60%] w-full h-full auto-rows-fr">
       <div class="w-full h-full" :style="style" />
-
       <div class="slidev-layout reference flex flex-col items-center justify-center text-center relative px-8">
         <img v-if="props.logo" :src="props.logo" class="w-36 h-auto absolute top-6 right-6" alt="logo" />
-
         <slot />
       </div>
     </div>
