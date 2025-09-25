@@ -8,4 +8,3 @@ components.d.ts
 .direnv/
 **/node_modules
 **/.turbo/
-.turbo/
