@@ -1,5 +1,0 @@
- WARN  Unsupported engine: wanted: {"node":"22.19.0"} (current: {"node":"v22.17.1","pnpm":"10.15.1"})
-
-> 56k-slides-infra@ build E:\travail\56k-slides-demo\infrastructure
-> tsc --noEmit
-
