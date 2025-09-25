@@ -7,16 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@slidev/theme-default':
-        specifier: latest
-        version: 0.25.0
-      '@slidev/theme-seriph':
-        specifier: latest
-        version: 0.25.0
-      vue:
-        specifier: ^3.5.13
-        version: 3.5.21(typescript@5.9.2)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.2.4
@@ -36,9 +26,6 @@ importers:
       '@slidev/theme-seriph':
         specifier: latest
         version: 0.25.0
-      vue:
-        specifier: ^3.5.13
-        version: 3.5.21(typescript@5.9.2)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.2.3

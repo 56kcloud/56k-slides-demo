@@ -15,11 +15,9 @@
   "dependencies": {
     "@slidev/cli": "^51.1.2",
     "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest",
-    "vue": "^3.5.13"
+    "@slidev/theme-seriph": "latest"
   },
   "devDependencies": {
-    "@slidev/cli": "^51.1.2",
     "@intlify/unplugin-vue-i18n": "^11.0.1",
     "cross-env": "^10.0.0",
     "vue-i18n": "^11.1.12",
