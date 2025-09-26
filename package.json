@@ -7,11 +7,10 @@
   ],
   "packageManager": "pnpm@10.15.1",
   "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
     "lint": "turbo run lint",
     "format": "turbo run format",
-    "check": "turbo run check"
+    "check": "turbo run check",
+    "build": "turbo run build"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.4",
