@@ -35,9 +35,9 @@ This project contains all Slidev presentations and their automated deployment pi
 Each presentation is located in `apps/slidev/presentations/<deck>/slides.md`.  
 Translations are located in `apps/slidev/languages/<lang>/<deck>.json`.
 
-Example to run a presentation in French:
+Example to run a presentation:
 ```bash
-pnpm dev presentations/introduction/slides.md --deck introduction --lang fr
+pnpm dev presentations/introduction/slides.md --deck <deck> --lang <lang> --theme <theme>
 ```
 
 ---
