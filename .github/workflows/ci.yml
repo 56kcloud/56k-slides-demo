@@ -32,7 +32,7 @@ jobs:
           pnpm -w list
 
       - name: Check (Biome lint + format check)
-        run: pnpm -w run check
+        run: pnpm -w --filter ./apps/slidev run check
 
       - name: Build (Turbo)
-        run: pnpm -w run build
+        run: pnpm -w --filter ./apps/slidev run build
