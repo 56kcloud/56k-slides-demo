@@ -7,12 +7,16 @@
     "export": "slidev export",
     "preview": "npx serve dist -l 4173",
     "dev:pres": "slidev",
-    "build": "node ./scripts/build-presentations.mjs"
+    "build": "node ./scripts/build-presentations.mjs",
+    "lint": "biome lint .",
+    "format": "biome format . --write",
+    "check": "biome check ."
   },
   "dependencies": {
     "@slidev/cli": "^51.1.2",
     "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest"
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@intlify/unplugin-vue-i18n": "^11.0.1",
