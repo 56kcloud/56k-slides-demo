@@ -39,33 +39,25 @@
 
 ### 1. Install dependencies
 ```bash
-npm install
+pnpm install --frozen-lockfile           
 ```
 
 ### 2. Start the dev server
 ```bash
-npm run dev
-# or
-npx slidev --open
+pnpm dev --deck <slide> --lang <lang> --theme <theme>        
 ```
 
 ### 3. Build static site
 ```bash
-npm run build
+pnpm build
 # output: ./dist
-```
-
-### 4. Export to PDF
-```bash
-npm run export
-# output: ./dist/export.pdf
 ```
 
 ---
 
 ## 🎨 Theme & Layouts
 
-### Theme variables (`theme/styles/layout.css`)
+### Theme variables (`themes/<theme>/layout.css`)
 ```css
 :root {
   --slidev-theme-primary: #ffffff;
@@ -107,48 +99,57 @@ Deployment is fully automated using **GitHub Actions** → S3 + CloudFront.
 
 ### 3. GitHub Actions Workflow (`.github/workflows/deploy.yml`)
 ```yaml
-name: Deploy Slidev to S3 + CloudFront
+name: build-and-deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
   workflow_dispatch:
 
 permissions:
-  id-token: write
   contents: read
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.1
+          run_install: true
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: '22.19.0'
+          cache: 'pnpm'
 
-      - name: Install dependencies
-        run: npm ci
 
-      - name: Build Slidev
-        run: npm run build
+      - name: Build all (Turbo)
+        run: pnpm -w run build
 
-      - name: Configure AWS credentials (OIDC)
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-region: ${{ secrets.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          role-session-name: slidev-deploy
+          aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Upload to S3
-        run: aws s3 sync ./dist s3://${{ secrets.S3_BUCKET }}/ --delete
+      - name: Sync apps/slidev/dist to S3
+        run: |
+          aws s3 sync "apps/slidev/dist/" "s3://${{ secrets.S3_BUCKET }}/" --delete --only-show-errors
 
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DISTRIBUTION_ID }} --paths "/*"
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ secrets.CF_DISTRIBUTION_ID }}" \
+            --paths "/*"
+
 ```
 
 ---

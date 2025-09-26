@@ -22,7 +22,7 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
-const entry = path.join("apps/slidev/presentations", deck, "slides.md");
+const entry = path.join("presentations", deck, "slides.md");
 
 const childEnv = {
   ...process.env,
