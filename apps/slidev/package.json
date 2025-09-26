@@ -3,11 +3,11 @@
   "type": "module",
   "private": false,
   "scripts": {
-    "dev": "node ./apps/slidev/scripts/presentation_launch.mjs",
+    "dev": "node ./scripts/presentation_launch.mjs",
     "export": "slidev export",
     "preview": "npx serve dist -l 4173",
     "dev:pres": "slidev",
-    "build": "node ./apps/slidev/scripts/build-presentations.mjs",
+    "build": "node ./scripts/build-presentations.mjs",
     "lint": "biome lint .",
     "format": "biome format . --write",
     "check": "biome check ."
